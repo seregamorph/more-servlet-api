@@ -75,9 +75,9 @@ public class RequestWrapper extends HttpServletRequestWrapper {
 
             @Override
             public boolean markSupported() {
-                // в текущей реализации сервера вызывается в одном месте из недр spring webmvc
-                // делает буферизованный InputStream само
-                // пока не заморачиваемся
+                // this method is called once from insides of spring webmvc
+                // in case of false makes buffered stream itself
+                // to simplify do not care for now
                 return false;
             }
         };
