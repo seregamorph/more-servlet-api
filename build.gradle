@@ -1,0 +1,31 @@
+apply plugin: 'java'
+
+group 'org.moreservletapi'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+project.ext {
+    slf4jVersion = '1.7.25'
+    servletApiVersion = '3.1.0'
+    springVersion = '4.3.9.RELEASE'
+    assertjVersion = '3.5.2'
+}
+
+dependencies {
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+
+    compileOnly "javax.servlet:javax.servlet-api:${servletApiVersion}"
+
+    testCompile 'junit:junit:4.12'
+    testCompile "org.assertj:assertj-core:${assertjVersion}"
+    testCompile "org.springframework:spring-test:${springVersion}"
+    testCompile "javax.servlet:javax.servlet-api:${servletApiVersion}"
+}
+
+defaultTasks 'clean', 'assemble', 'compileTestJava'

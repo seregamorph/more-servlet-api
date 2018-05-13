@@ -1,6 +1,7 @@
 .gradle
-build
+build/
+out/
 *.iws
 *.ipr
 .idea
-
+*.iml
